@@ -5,6 +5,7 @@ const logger = require("morgan");
 const cors = require("cors");
 
 const indexRouter = require("./routes/api/index");
+const userRouter = require("./routes/api/user");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api", indexRouter);
+app.use("/api/users", userRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
