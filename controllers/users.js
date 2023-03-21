@@ -2,7 +2,10 @@ const { nanoid } = require("nanoid");
 const db = require("../services/db");
 
 async function getUsers(req, res) {
-  res.json({ message: "alive" });
+  const users = await db.query(
+    "SELECT * FROM users JOIN profiles ON users.profileId = profiles.id"
+  );
+  res.status(200).json(users);
 }
 
 async function getUsersByRole(req, res) {}
