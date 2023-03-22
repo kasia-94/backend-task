@@ -1,5 +1,8 @@
 CREATE TYPE userRoles AS ENUM ('admin', 'worker', 'customer');
 CREATE TYPE stateTypes AS ENUM ('male', 'female');
+
+DROP TABLE IF EXISTS profiles CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE profiles (
   id VARCHAR(255) PRIMARY KEY,
   firstName VARCHAR(255) NOT NULL,

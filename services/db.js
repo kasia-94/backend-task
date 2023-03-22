@@ -1,6 +1,12 @@
 const { Pool } = require("pg");
-const config = require("../config");
-const pool = new Pool(config.db);
+// const config = require("../config");
+const pool = new Pool({
+  host: "localhost",
+  port: 5432,
+  user: "postgres",
+  password: "root",
+  database: "backend_sameit",
+});
 
 /**
  * Query the database using the pool

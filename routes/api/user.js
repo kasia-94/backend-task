@@ -3,9 +3,8 @@ const router = express.Router();
 const users = require("../../controllers/users");
 
 router.get("/", users.getUsers);
-router.get("/users/:role", users.getUsersByRole);
-router.patch("/users/:id", users.updateUser);
+router.patch("/users/:userId", users.updateUser);
 router.post("/users/", users.addUser);
-router.delete("/users/:id", users.deleteUser);
+router.delete("/users/:userId", users.deleteUser);
 
 module.exports = router;
